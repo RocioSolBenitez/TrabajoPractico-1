@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trivia de Cine</title>
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
+
+    <body class="pagina">
+        <div class="contenedor">
+
+            <header class="encabezado">
+                <h1>Trivia de Cine</h1>
+
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="cartas.html">Juego de Cartas</a></li>
+                        <li><a href="dados.html">Juego de Dados</a></li>
+                        <li><a href="preguntas.html">Trivia de Cine</a></li>
+                        <li><a href="puntajes.html">Puntajes</a></li>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main class="contenido">
+
+                <section>
+                    <h2>10 preguntas de Trivia sobre peliculas</h2>
+
+                    <p>
+                        Poné a prueba tu conocimiento sobre una variedad de películas icónicas,
+                        directores famosos, actores y ganadores de premios. ¡Desafíate a vos mismo
+                        y descubrí cuántas preguntas podés responder correctamente!
+                    </p>
+
+                    <p id="estado" class="lila">Cargando preguntas...</p>
+                </section>
+
+                <section id="juego" class="oculto">
+                    <p id="progreso"></p>
+                    <h3 id="pregunta"></h3>
+                    <div id="opciones"></div>
+                    <p id="resultado" class="resultado"></p>
+                    <button id="siguiente" type="button" hidden>
+                        Siguiente pregunta
+                    </button>
+                </section>
+
+                <section id="final" class="oculto">
+                    <h3>Resultado final</h3>
+                    <p id="puntaje" class="resultado"></p>
+
+                    <button id="reiniciar" type="button">
+                        Jugar nuevamente
+                    </button>
+                </section>
+
+                <button id="reintentar" type="button" hidden>
+                    Intentar nuevamente
+                </button>
+
+            </main>
+
+            <footer>
+                <p>Informática General 2026</p>
+            </footer>
+
+        </div>
+
+        <script src="js/preguntas.js"></script>
+    </body>
+</html>
