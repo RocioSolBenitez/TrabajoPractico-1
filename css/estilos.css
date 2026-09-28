@@ -1,34 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* cuerpo */
 body{
-    background-color: #6a0dad;
-    color:white;
+    background-color:#37027c;
+    color:rgb(234, 199, 255);
     font-family: arial, sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 2rem;
 }
 main{
     text-align:center;
+
 }
-h1,h2{
-    font-size: 40px;
-    margin-bottom:20px;
+
+/* contenedor principal */
+.contenedor{
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    background-color: rgba(174, 75, 240, 0.671);
+    padding: 2rem;
 }
-nav{
+
+.contenedor {
+    background-color: #6d10d88c;
+    border: 3px solid #2b055c;
+    border-radius: 18px;
+    padding: 30px;
+    width: 80%;
+    margin: 40px auto;
+    box-shadow: 8px 8px 0px #01e78fec;
+}
+
+/* encabezado */
+.encabezado{
+    background-color: rgba(124, 81, 243, 0.801);
+    color: rgb(250, 233, 253);
+    text-align: center;
+    padding: 2rem;
     margin-bottom: 30px;
 }
-nav a{
+
+.encabezado{
+   background: linear-gradient(90deg, #ab19ff, #2ee68a);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 18px;
+}
+
+.menu a{
     color: white;
     text-decoration: none;
     margin: 0 10px;
 }
-nav a:hover{
+.menu a:hover{
     color: #d8b4fe;
 }
-nav ul{
+.menu ul{
     list-style: none;
     padding: 0;
 }
-nav li{
+.menu li{
     display: inline;
 }
-buttom{
+.contenido{
+    padding: 2rem;
+}
+
+
+/* Titulos */
+h1, h2, h3{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Abel', sans-serif;
+}
+
+p{
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+
+
+button{
     background-color: #4b0082;
     color:white;
     border: none;
@@ -37,7 +96,7 @@ buttom{
     border-radius: 8px;
     cursor:pointer;
 }
-article img{
+#cartas{
     width:180px;
     height: 180px;
     object-fit: contain;
@@ -56,6 +115,10 @@ article img{
 }
 button:hover{
     background-color: #8a2be2;
+}    
+h1,h2{
+    font-size: 40px;
+    margin-bottom:20px;
 }
 footer{
     margin-top: none;
