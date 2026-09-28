@@ -1,57 +1,81 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Carrera de Dados</title>
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <title>Carrera de Dados</title>
-    <link rel="stylesheet" href="css/estilos.css">
-</head>
+    <body class="pagina">
+        <div class="contenedor">
 
-<body>
+            <header class="encabezado">
+                <h1>Carrera de Dados</h1>
 
-<header>
-    <h1>Carrera de Dados</h1>
-</header>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="cartas.html">Juego de Cartas</a></li>
+                        <li><a href="dados.html">Juego de Dados</a></li>
+                        <li><a href="preguntas.html">Juego de Preguntas</a></li>
+                        <li><a href="puntajes.html">Puntajes</a></li>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="cartas.html">Juego de Cartas</a></li>
-        <li><a href="dados.html">Juego de Dados</a></li>
-        <li><a href="preguntas.html">Juego de Preguntas</a></li>
-        <li><a href="puntajes.html">Puntajes</a></li>
-        <li><a href="integrantes.html">Integrantes</a></li>
-    </ul>
-</nav>
+            <main class="contenido">
 
-<main>
+                <section>
+                    <h2>¿Cómo se juega?</h2>
 
-<section>
-    <h2>¿Cómo se juega?</h2>
-        <p>-Dos jugadores compiten para llegar al casillero 30. En cada turno se tiran dos dados y 
-        se suman sus resultados.</p>
-        <p>-Si en la suma de los dos dados da 7, el jugador pierde el turno, no avanza y sigue el otro jugador.</p>
-        <p>-Si la suma supera la cantidad de casilleros que faltan, el jugador tampoco avanza.</p>
-        <p>-El primero en llegar al casillero 30 gana!.</p>
-        <p>-Cada jugador tiene 15 segundos para realizar su turno.</p>
-</section>
+                    <p>
+                        -Dos jugadores compiten para llegar al casillero 30. En cada turno
+                        se tiran dos dados y se suman sus resultados.
+                    </p>
 
-<section>
-    <h2>Turno del Jugador 1</h2>
-    <p>Tiempo: 15</p>
-    <h3>Jugador 1</h3>
-    <h3>Jugador 2</h3>
-    <button type="button">Tirar dados</button>
-    <button type="button">Nueva partida</button>
-</section>
+                    <p>
+                        -Si en la suma de los dos dados da 7, el jugador pierde el turno,
+                        no avanza y sigue el otro jugador.
+                    </p>
 
-</main>
+                    <p>
+                        -Si la suma supera la cantidad de casilleros que faltan,
+                        el jugador tampoco avanza.
+                    </p>
 
-<footer>
-    <p>Informática General 2026 - Artes Multimediales</p>
-</footer>
+                    <p>
+                        -El primero en llegar al casillero 30 gana!.
+                    </p>
 
-<script src="js/dados.js"></script> <!--Rocio: Agrego esto aunque todavia no este el js-->
-</body>
+                    <p>
+                        -Cada jugador tiene 15 segundos para realizar su turno.
+                    </p>
+                </section>
 
+                <section>
+                    <h2>Turno del Jugador 1</h2>
+
+                    <p>Tiempo: 15</p>
+
+                    <h3>Jugador 1</h3>
+                    <h3>Jugador 2</h3>
+
+                    <button type="button">Tirar dados</button>
+                    <button type="button">Nueva partida</button>
+                </section>
+
+            </main>
+
+            <footer>
+                <p>Informática General 2026 - Artes Multimediales</p>
+            </footer>
+
+        </div>
+
+        <script src="js/dados.js"></script> <!--Rocio: Agrego esto aunque todavia no este el js-->
+
+    </body>
 </html>
+```

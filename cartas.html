@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -5,48 +6,77 @@
         <title>Mayor o Menor</title>
         <link rel="stylesheet" href="css/estilos.css">
     </head>
-    <body>
-        <header>
-            <h1>Mayor o Menor</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="cartas.html">Juego de Cartas</a></li>
-                <li><a href="dados.html">Juego de Dados</a></li>
-                <li><a href="preguntas.html">Juego de Preguntas</a></li>
-                <li><a href="puntajes.html">Puntajes</a></li>
-                <li><a href="integrantes.html">Integrantes</a></li>
-            </ul>
-        </nav>
-        <main>
-            <section>
-                <h2>¿Cómo se juega?</h2>
-                <p>El juego muestra una carta y tenés que adivinar si la próxima carta será mayor o menor que la anterior.</p>
-                <p>Elegír "mayor" si pensás que la próxima carta tendrá un número más alto, o "menor" si pensás que tendrá un número más bajo.</p>
-            </section>
 
-            <section>
-                <h2>Cartas actual</h2>
-                <article>
-                    <p id="cartas"></p>
-                    <img src="img/cartas/cartas.png" alt="cartas">
-                    <img src="img/cartas/images.jpg" alt="cartas">
-                </article>
-                <p>¿La próxima carta será?</p>
-                <button>Mayor</button>
-                <button>Menor</button>
-            </section>
-            <section>
-                <p>Ronda:<span id="ronda">0</span></p>
-                <p>Puntos:<span id="puntaje">0</span></p>
-            </section>
-            <section>
-                <button id="reiniciar">Nueva partida</button>
-            </section>
-        </main>
-        <footer>
-            <p>Informática General 2026 - Artes Multimediales</p>
-        </footer>
-        </body>
+    <body class="pagina">
+        <div class="contenedor">
+
+            <header class="encabezado">
+                <h1>Mayor o Menor</h1>
+
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="cartas.html">Juego de Cartas</a></li>
+                        <li><a href="dados.html">Juego de Dados</a></li>
+                        <li><a href="preguntas.html">Juego de Preguntas</a></li>
+                        <li><a href="puntajes.html">Puntajes</a></li>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main class="contenido">
+
+                <section>
+                    <h2>¿Cómo se juega?</h2>
+
+                    <p>
+                        El juego muestra una carta y tenés que adivinar si la próxima carta
+                        será mayor o menor que la anterior.
+                    </p>
+
+                    <p>
+                        Elegír "mayor" si pensás que la próxima carta tendrá un número más alto,
+                        o "menor" si pensás que tendrá un número más bajo.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Cartas actual</h2>
+
+                    <article>
+                        <p id="cartas"></p>
+
+                        <img src="img/cartas/cartas.png" alt="cartas">
+                        <img src="img/cartas/images.jpg" alt="cartas">
+                    </article>
+
+                    <p>¿La próxima carta será?</p>
+
+                    <button>Mayor</button>
+                    <button>Menor</button>
+                </section>
+
+                <section>
+                    <p>
+                        Ronda: <span id="ronda">0</span>
+                    </p>
+
+                    <p>
+                        Puntos: <span id="puntaje">0</span>
+                    </p>
+                </section>
+
+                <section>
+                    <button id="reiniciar">Nueva partida</button>
+                </section>
+
+            </main>
+
+            <footer>
+                <p>Informática General 2026 - Artes Multimediales</p>
+            </footer>
+
+        </div>
+    </body>
 </html>
