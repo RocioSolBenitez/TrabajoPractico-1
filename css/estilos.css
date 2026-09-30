@@ -123,3 +123,102 @@ footer{
 
 
 /* CSS DE DADOS.HTML */
+
+.explicacion {
+    margin-bottom: 3rem;
+}
+
+.temporizador {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tiempo {
+    color: red;
+}
+
+#dados {
+    margin: 25px 0;
+}
+
+#dados img {
+    width: 6rem;
+    height: 6rem;
+    margin: 0.5rem;
+}
+
+button:disabled {
+    background-color: #999999;
+    cursor: not-allowed;
+}
+
+#resultado {
+    margin-top: 1rem;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#mensaje {
+    font-size: 18px;
+    min-height: 25px;
+}
+
+.posiciones {
+    text-align: center;
+}
+
+.posiciones p {
+    display: inline-block;
+    margin: 10px 30px;
+    font-size: 18px;
+}
+
+#posicion1 {
+    font-weight: bold;
+}
+
+#posicion2 {
+    font-weight: bold;
+}
+
+#tablero {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.juego-contenedor {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.juego {
+    width: 35%;
+    text-align: center;
+}
+
+.derecha {
+    width: 65%;
+}
+
+.seccion-tablero {
+    text-align: center;
+}
+
+.abajo {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.posiciones {
+    width: 50%;
+    text-align: center;
+}
+
+.reinicio {
+    width: 50%;
+    text-align: center;
+}
+
+
