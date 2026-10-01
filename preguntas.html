@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Trivia de Cine</title>
+        <title>Trivia</title>
         <link rel="stylesheet" href="css/estilos.css">
     </head>
 
@@ -10,17 +10,14 @@
         <div class="contenedor">
 
             <header class="encabezado">
-                <h1>Trivia de Cine</h1>
+                <h1>Trivia </h1>
 
                 <nav class="menu">
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="cartas.html">Juego de Cartas</a></li>
                         <li><a href="dados.html">Juego de Dados</a></li>
-                        <li><a href="preguntas.html">Juego de Preguntas</a></li> <!--Rocio: Cambie el nombre de 
-                                                                                 trivia de cine a juego de preguntas, 
-                                                                                 asi quedan los tres juegos con los nombres 
-                                                                                 parecidos-->
+                        <li><a href="preguntas.html">Juego de Preguntas</a></li>
                         <li><a href="puntajes.html">Puntajes</a></li>
                         <li><a href="integrantes.html">Integrantes</a></li>
                     </ul>
@@ -30,19 +27,19 @@
             <main class="contenido">
 
                 <section>
-                    <h2>10 preguntas de Trivia sobre peliculas</h2>
+                    <h2>Trivia de Música, Cine y Geografía</h2>
 
                     <p>
-                        Poné a prueba tu conocimiento sobre una variedad de películas icónicas,
-                        directores famosos, actores y ganadores de premios. ¡Desafíate a vos mismo
-                        y descubrí cuántas preguntas podés responder correctamente!
+                    Poné a prueba tus conocimientos sobre música, cine y geografía. La trivia está dividida en 3 rondas, donde la dificultad aumenta progresivamente. ¡Desafiate, superá cada ronda y descubrí cuántas preguntas podés responder correctamente!
                     </p>
 
                     <p id="estado" class="lila">Cargando preguntas...</p>
+                    <img id="imagenRonda" src="" alt="">
                 </section>
 
                 <section id="juego" class="oculto">
                     <p id="progreso"></p>
+                    <p id="temporizador"></p>
                     <h3 id="pregunta"></h3>
                     <div id="opciones"></div>
                     <p id="resultado" class="resultado"></p>
@@ -54,6 +51,7 @@
                 <section id="final" class="oculto">
                     <h3>Resultado final</h3>
                     <p id="puntaje" class="resultado"></p>
+                    
 
                     <button id="reiniciar" type="button">
                         Jugar nuevamente

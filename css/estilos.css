@@ -22,27 +22,23 @@ main{
     width: 80%;
     max-width: 1200px;
     margin: auto;
-    background-color: rgba(174, 75, 240, 0.671);
     padding: 2rem;
-}
-
-.contenedor {
     background-color: #6d10d88c;
     border: 3px solid #2b055c;
     border-radius: 18px;
     padding: 2rem;
     width: 80%;
     margin: 0.5rem auto;
-    box-shadow: 8px 8px 0px #01e78fec;
-}
+    box-shadow: 8px 8px 0px #01e7c1ec;
 
+}
 /* encabezado */
 .encabezado{
     background-color: rgba(124, 81, 243, 0.801);
     color: rgb(250, 233, 253);
     text-align: center;
     padding: 2rem;
-    background: linear-gradient(90deg, #ab19ff, #2ee68a);
+    background: linear-gradient(90deg, #ab19ff, #2ee6af);
     color: white;
     border-radius: 18px;
 }
@@ -82,7 +78,7 @@ p{
 }
 
 button{
-    background-color: #4b0082;
+    background-color: #310e5a;
     color:white;
     border: none;
     padding: 12px 25px;
@@ -148,8 +144,9 @@ footer{
 }
 
 button:disabled {
+    background-color: #73ffd5ab;
     background-color: #999999;
-    cursor: not-allowed;
+     cursor: not-allowed;
 }
 
 #resultado {
@@ -184,6 +181,22 @@ button:disabled {
 #tablero {
     text-align: center;
     margin-top: 20px;
+}
+
+.numero {
+    display: block;
+    font-weight: bold;
+}
+
+.casillero {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #222222;
+    margin: 3px;
+    vertical-align: top;
+    padding: 5px;
+    background-color: #eeeeee;
 }
 
 .juego-contenedor {
@@ -221,4 +234,13 @@ button:disabled {
     text-align: center;
 }
 
+
+/* PREGUNTAS IMG */
+#imagenRonda {
+    width: 425px;
+    height: 325px;
+    object-fit: cover;
+    display: block;
+    margin: 15px auto;
+}
 
