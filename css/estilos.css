@@ -186,6 +186,22 @@ button:disabled {
     margin-top: 20px;
 }
 
+.numero {
+    display: block;
+    font-weight: bold;
+}
+
+.casillero {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #222222;
+    margin: 3px;
+    vertical-align: top;
+    padding: 5px;
+    background-color: #eeeeee;
+}
+
 .juego-contenedor {
     display: flex;
     gap: 2rem;
