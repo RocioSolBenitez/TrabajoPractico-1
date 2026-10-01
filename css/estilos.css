@@ -5,7 +5,7 @@
 }
 /* cuerpo */
 body{
-    background-color:#37027c;
+    background-color: #2E016B;
     color:rgb(234, 199, 255);
     font-family: arial, sans-serif;
     background-size: cover;
@@ -22,18 +22,14 @@ main{
     width: 80%;
     max-width: 1200px;
     margin: auto;
-    background-color: rgba(174, 75, 240, 0.671);
     padding: 2rem;
-}
-
-.contenedor {
     background-color: #6d10d88c;
     border: 3px solid #2b055c;
     border-radius: 18px;
-    padding: 30px;
+    padding: 2rem;
     width: 80%;
-    margin: 40px auto;
-    box-shadow: 8px 8px 0px #01e78fec;
+    margin: 0.5rem auto;
+    box-shadow: 8px 8px 0px #01e7c1ec;
 }
 
 /* encabezado */
@@ -42,24 +38,19 @@ main{
     color: rgb(250, 233, 253);
     text-align: center;
     padding: 2rem;
-    margin-bottom: 30px;
-}
-
-.encabezado{
-   background: linear-gradient(90deg, #ab19ff, #2ee68a);
+    background: linear-gradient(90deg, #ab19ff, #2ee6af);
     color: white;
-    padding: 30px;
-    text-align: center;
     border-radius: 18px;
 }
 
 .menu a{
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 1rem;
+    font-weight: bold;
 }
 .menu a:hover{
-    color: #d8b4fe;
+    color: #47151c;
 }
 .menu ul{
     list-style: none;
@@ -68,6 +59,7 @@ main{
 .menu li{
     display: inline;
 }
+
 .contenido{
     padding: 2rem;
 }
@@ -75,20 +67,18 @@ main{
 
 /* Titulos */
 h1, h2, h3{
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     font-family: 'Abel', sans-serif;
 }
 
 p{
     margin-bottom: 1rem;
-    line-height: 1.5;
+    line-height: 1.5rem;
 }
 
-
-
 button{
-    background-color: #4b0082;
+    background-color: #310e5a;
     color:white;
     border: none;
     padding: 12px 25px;
@@ -123,4 +113,133 @@ h1,h2{
 footer{
     margin-top: none;
     text-align: center;
+    font-weight: bold;
+}
+
+
+
+/* CSS DE DADOS.HTML */
+
+.explicacion {
+    margin-bottom: 3rem;
+}
+
+.temporizador {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tiempo {
+    color: red;
+}
+
+#dados {
+    margin: 25px 0;
+}
+
+#dados img {
+    width: 6rem;
+    height: 6rem;
+    margin: 0.5rem;
+}
+
+button:disabled {
+    background-color: #73ffd5ab;
+    cursor: not-allowed;
+}
+
+#resultado {
+    margin-top: 1rem;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#mensaje {
+    font-size: 18px;
+    min-height: 25px;
+}
+
+.posiciones {
+    text-align: center;
+}
+
+.posiciones p {
+    display: inline-block;
+    margin: 10px 30px;
+    font-size: 18px;
+}
+
+#posicion1 {
+    font-weight: bold;
+}
+
+#posicion2 {
+    font-weight: bold;
+}
+
+#tablero {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.numero {
+    display: block;
+    font-weight: bold;
+}
+
+.casillero {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #222222;
+    margin: 3px;
+    vertical-align: top;
+    padding: 5px;
+    background-color: #eeeeee;
+}
+
+.juego-contenedor {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.juego {
+    width: 35%;
+    text-align: center;
+}
+
+.derecha {
+    width: 65%;
+}
+
+.seccion-tablero {
+    text-align: center;
+}
+
+.abajo {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.posiciones {
+    width: 50%;
+    text-align: center;
+}
+
+.reinicio {
+    width: 50%;
+    text-align: center;
+}
+
+
+
+/* PREGUNTAS IMG */
+#imagenRonda {
+    width: 425px;
+    height: 325px;
+    object-fit: cover;
+    display: block;
+    margin: 15px auto;
 }
