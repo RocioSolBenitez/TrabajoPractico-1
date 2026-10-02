@@ -128,7 +128,7 @@ async function cargarPreguntas() {
 
     juego.classList.add("oculto");
     final.classList.add("oculto");
-
+    juego.classList.remove("oculto");
     reintentar.hidden = true;
     siguiente.hidden = true;
 
@@ -486,6 +486,8 @@ reiniciar.addEventListener("click", () => {
     rondas.forEach((ronda) => {
         ronda.preguntas = [];
     });
+    
+    final.classList.add("oculto");
 
     cargarPreguntas();
 });
@@ -519,3 +521,4 @@ siguiente.addEventListener("click", avanzar);
 
 
 cargarPreguntas();
+

@@ -235,12 +235,16 @@ button:disabled {
 }
 
 
-/* PREGUNTAS IMG */
+/* juego PREGUNTAS */
 #imagenRonda {
     width: 425px;
     height: 325px;
     object-fit: cover;
     display: block;
     margin: 15px auto;
+}
+
+.oculto {
+    display: none;
 }
 
