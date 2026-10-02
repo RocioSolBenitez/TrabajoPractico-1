@@ -51,6 +51,33 @@ function crearTablero() {
     }
 }
 
+//ESTO ES PARA QUE SE VEAN LAS FICHAS
+function mostrarFichas() {
+
+    let fichasAnteriores = document.querySelectorAll(".ficha1, .ficha2");
+
+    for (let i = 0; i < fichasAnteriores.length; i++) {
+        fichasAnteriores[i].remove();
+    }
+
+    let casilleros = document.querySelectorAll(".casillero");
+    let ficha1 = document.createElement("span");
+
+    ficha1.classList.add("ficha1");
+
+    casilleros[posicionJugador1]
+        .querySelector(".fichas")
+        .append(ficha1);
+
+    let ficha2 = document.createElement("span");
+
+    ficha2.classList.add("ficha2");
+
+    casilleros[posicionJugador2]
+        .querySelector(".fichas")
+        .append(ficha2);
+}
+
 //TIRAR LOS DADOS
 function tirarDados() {
 
@@ -70,4 +97,74 @@ function tirarDados() {
     resultado.innerText = "Salió " + dado1 + " y " + dado2 + ". La suma es " + suma;
 
     cantidadTurnos++;
-    
+
+//SI LOS DOS DADOS SON IGUALES
+    if (dado1 == dado2) {
+
+        mensaje.innerText = "¡Salieron iguales! No avanzas";
+
+        cambiarJugador();
+        return;
+    }
+
+//SE GUARDA LA POSICIÓN DEL JUGADOR
+    let posicionActual;
+
+    if (jugadorActual == 1) {
+        posicionActual = posicionJugador1;
+    } else {
+        posicionActual = posicionJugador2;
+    }
+
+    let nuevaPosicion = posicionActual + suma;
+
+
+//CUANDO LLEGUE AL CASILLERO 30
+    if (nuevaPosicion == 30) {
+
+        if (jugadorActual == 1) {
+            posicionJugador1 = 30;
+        } else {
+            posicionJugador2 = 30;
+        }
+
+        mostrarPosiciones();
+        mostrarFichas();
+
+        ganar();
+        return;
+    }
+
+//SI SE PASA DE 30, VUELVE PARA ATRAS
+    if (nuevaPosicion > 30) {
+
+        let pasado = nuevaPosicion - 30;
+
+        nuevaPosicion = 30 - pasado;
+
+        mensaje.innerText = "¡Te pasaste! Volves " + pasado + " casilleros hacia atrás";
+    } 
+    else {
+        mensaje.innerText = "Avanzás " + suma + " casilleros";
+    }
+
+//SE GUARDA LA NUEVA POSICIÓN DEL JUGADOR
+    if (jugadorActual == 1) {
+        posicionJugador1 = nuevaPosicion;
+    } else {
+        posicionJugador2 = nuevaPosicion;
+    }
+
+    mostrarPosiciones();
+    mostrarFichas();
+    cambiarJugador();
+}
+
+//MOSTRAR POSICIONES
+function mostrarPosiciones() {
+
+    posicion1HTML.innerText = posicionJugador1;
+    posicion2HTML.innerText = posicionJugador2;
+}
+
+

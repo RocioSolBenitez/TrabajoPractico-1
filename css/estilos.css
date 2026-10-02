@@ -130,7 +130,7 @@ footer{
 }
 
 #tiempo {
-    color: red;
+    color: lightyellow;
 }
 
 #dados {
@@ -188,15 +188,27 @@ button:disabled {
     font-weight: bold;
 }
 
-.casillero {
+.fichas {
+    margin-top: 8px;
+    min-height: 25px;
+}
+
+.ficha1 {
     display: inline-block;
-    width: 55px;
-    height: 55px;
-    border: 2px solid #222222;
-    margin: 3px;
-    vertical-align: top;
-    padding: 5px;
-    background-color: #eeeeee;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.ficha2 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #d733a0;
+    border-radius: 50%;
+    margin: 2px;
 }
 
 .juego-contenedor {
@@ -232,6 +244,17 @@ button:disabled {
 .reinicio {
     width: 50%;
     text-align: center;
+}
+
+.casillero {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #222222;
+    margin: 3px;
+    vertical-align: top;
+    padding: 5px;
+    background-color: #eeeeee;
 }
 
 
