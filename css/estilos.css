@@ -89,7 +89,9 @@ button{
 #imagenCarta{
     width:200px;
     height: 280px;
-    object-fit: contain;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 #carta-actual{
     margin: 20px auto;
@@ -155,8 +157,12 @@ button:disabled {
 }
 
 #mensaje {
-    font-size: 18px;
-    min-height: 25px;
+    font-size: 40px;
+    min-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+
 }
 
 .posiciones {
