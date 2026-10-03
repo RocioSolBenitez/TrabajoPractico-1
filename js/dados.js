@@ -17,7 +17,7 @@ let cantidadTurnos = 0;
 
 //SELECCIONO ELEMENTOS DEL HTML
 const turno = document.querySelector("#turno");
-const tiempo = document.querySelector("#tiempo");
+const tiempoHTML = document.querySelector("#tiempo");
 const imagenDado1 = document.querySelector("#dado1");
 const imagenDado2 = document.querySelector("#dado2");
 const botonTirar = document.querySelector("#tirar");
@@ -163,8 +163,124 @@ function tirarDados() {
 //MOSTRAR POSICIONES
 function mostrarPosiciones() {
 
-    posicion1HTML.innerText = posicionJugador1;
-    posicion2HTML.innerText = posicionJugador2;
+    posicion1.innerText = posicionJugador1;
+    posicion2.innerText = posicionJugador2;
 }
 
+//CAMBIAR JUGADOR
+function cambiarJugador() {
+
+    if (juegoTerminado == true) {
+        return;
+    }
+
+    if (jugadorActual == 1) {
+        jugadorActual = 2;
+    } else {
+        jugadorActual = 1;
+    }
+
+    turno.innerText = "Turno del Jugador " + jugadorActual;
+
+    iniciarTimer();
+}
+
+//PARA QUE INICIE EL TIEMPO
+function iniciarTimer() {
+
+    clearInterval(timer);
+
+    tiempo = 15;
+
+    tiempoHTML.innerText = tiempo;
+
+    timer = setInterval(function() {
+        tiempo--;
+        tiempoHTML.innerText = tiempo;
+
+        if (tiempo == 0) {
+
+            clearInterval(timer);
+
+            mensaje.innerText = "Se terminó el tiempo. Perdés el turno.";
+
+            cambiarJugador();
+        }
+
+    }, 1000);
+}
+
+//GANADOR
+function ganar() {
+
+    juegoTerminado = true;
+
+    clearInterval(timer);
+
+    turno.innerText = "¡Ganó el Jugador " + jugadorActual + "!";
+
+    mensaje.innerText = "Llegaste al casillero 30";
+
+    resultado.innerText = "Cantidad de turnos: " + cantidadTurnos;
+
+    botonTirar.disabled = true;
+
+    guardarResultado();
+}
+
+//GUARDAR LOS RESULTADOS
+function guardarResultado() {
+
+    let registros = localStorage.getItem("carreraDados");
+
+    if (registros == null) {
+        registros = [];
+    } else {
+        registros = JSON.parse(registros);
+    }
+
+    let nuevoRegistro = {
+        jugador: "Jugador " + jugadorActual,
+        turnos: cantidadTurnos
+    };
+
+    registros.push(nuevoRegistro);
+
+    localStorage.setItem(
+        "carreraDados", JSON.stringify(registros)
+    );
+}
+
+//NUEVA PARTIDA
+function nuevaPartida() {
+
+    clearInterval(timer);
+    posicionJugador1 = 0;
+    posicionJugador2 = 0;
+    jugadorActual = 1;
+    tiempo = 15;
+    cantidadTurnos = 0;
+    juegoTerminado = false;
+    imagenDado1.src = "img/dado1.jpg";
+    imagenDado2.src = "img/dado1.jpg";
+
+    resultado.innerText = "Presione el botón para comenzar";
+    mensaje.innerText = "";
+
+    mostrarPosiciones();
+    mostrarFichas();
+
+    turno.innerText = "Turno del Jugador 1";
+    botonTirar.disabled = false;
+
+    iniciarTimer();
+}
+
+//EVENTOS
+botonTirar.addEventListener("click", tirarDados);
+botonNuevaPartida.addEventListener("click", nuevaPartida);
+
+//COMENZAR JUEGO
+crearTablero();
+mostrarFichas();
 
