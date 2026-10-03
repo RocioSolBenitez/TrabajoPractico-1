@@ -1,3 +1,12 @@
+let tiempo = 10;
+let intervaloTimer;
+let juegoTerminado = false;
+
+let timer =
+document.getElementById("timer");
+let mensaje =
+document.getElementById("mensaje");
+
 let cartas = 
 document.getElementById("cartas");
 let ronda =
@@ -26,6 +35,53 @@ cartasDisponibles [posicion + 1];
 let rondaActual = 0;
 let puntos = 0;
 
+//carta aleatoria 
+function iniciarTimer() {
+    tiempo = 10;
+    timer.textContent = "tiempo" + tiempo;
+
+    intervaloTimer = setInterval(function()
+{
+    tiempo--;
+    timer.textContent = "tiempo" + tiempo;
+
+    if (tiempo <= 0){
+        clearInterval(intervaloTimer);
+
+        mensaje.textContent= "¡Se termino el juego!";
+        avanzarRonda();
+    }
+},1000);
+}
+function sacarCarta() {
+    let posicionRandom = Math.floor( Math.random()*
+cartasDisponibles.length);
+return cartasDisponibles[posicionRandom];
+}
+
+function avanzarRonda(){
+    if (rondaActual >= 10){
+        juegoTerminado = true;
+        clearInterval(intervaloTimer);
+
+        mensaje.textContent = "¡Terminaste las 10 rondas!";
+        mayor.disabled = true;
+        menor.disabled = true;
+
+        return;
+    }
+    cartaActual = cartaSiguiente;
+    cartaSiguiente = sacarCarta ();
+
+    rondaActual++;
+
+    actualizarPantalla();
+    iniciarTimer();
+}
+function mostrarDorso(){
+    imagenCarta.src = "img/cartas/dorso.png"
+}
+
 function actualizarPantalla() {
     ronda.textContent = rondaActual;
     puntaje.textContent = puntos;
@@ -34,29 +90,30 @@ function actualizarPantalla() {
 }
 
 mayor.addEventListener("click",function(){
-    if (cartaSiguiente > cartaActual){
-        puntos++;
-    }
-    posicion++;
+    if (juegoTerminado) return; 
+    clearInterval(intervaloTimer);
 
-    cartaActual =
-    cartasDisponibles[posicion];
-    cartaSiguiente =
-    cartasDisponibles[posicion + 1];
-    rondaActual++;
-    actualizarPantalla();
+    if(cartaSiguiente > cartaActual){
+        puntos++;
+        mensaje.textContent = "¡correcto!";
+    }else{
+        mensaje.textContent = "¡Incorrecto!";
+    }
+    avanzarRonda();
 });
 
 menor.addEventListener("click",function(){
-    if (cartaSiguiente < cartaActual){
+    if (juegoTerminado) return;
+    clearInterval(intervaloTimer);
+
+    if(cartaSiguiente < cartaActual){
         puntos++;
+        mensaje.textContent = "¡Correcto!";
+    }else{
+        mensaje.textContent = "¡Incorrecto!";
     }
-    cartaActual =
-    cartasDisponibles[posicion];
-    cartaSiguiente;
-    cartasDisponibles[posicion + 1];
-    rondaActual++;
-    actualizarPantalla();
+    avanzarRonda();
+
 });
 reiniciar.addEventListener("click",function(){
     posicion = 0;
@@ -66,7 +123,24 @@ reiniciar.addEventListener("click",function(){
     cartasDisponibles[posicion + 1];
     rondaActual = 0;
     puntos = 0;
+
+    juegoTerminado = false;
+
+    mayor.disabled = false;
+    menor.disabled = false;
+
+    cartaActual = sacarCarta();
+    cartaSiguiente = sacarCarta();
+
+    mensaje.textContent ="";
+
+
+    ronda.textContent = rondaActual;
+    puntaje.textContent = puntos;
+
     actualizarPantalla();
+    mostrarDorso();
 
 });
 actualizarPantalla();
+mostrarDorso();
