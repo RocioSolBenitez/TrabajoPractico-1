@@ -15,6 +15,7 @@ const reiniciar = document.querySelector("#reiniciar");
 const reintentar = document.querySelector("#reintentar");
 const imagenRonda = document.querySelector("#imagenRonda");
 const temporizador = document.querySelector("#temporizador");
+const empezar = document.querySelector("#empezar");
 
 
 // ==========================================
@@ -84,7 +85,7 @@ function mostrarError(mensaje) {
     detenerTemporizador();
 
     estado.textContent = mensaje;
-    estado.className = "rojo";
+    estado.className = "lila";
 
     juego.classList.add("oculto");
     final.classList.add("oculto");
@@ -122,13 +123,16 @@ async function esperarEntreSolicitudes() {
 
 async function cargarPreguntas() {
 
-    estado.className = "gris";
+    imagenRonda.classList.add("oculto");
+
+    estado.classList.remove("oculto");
+
+    estado.className = "lila";
 
     estado.textContent = "Cargando preguntas...";
 
     juego.classList.add("oculto");
     final.classList.add("oculto");
-    juego.classList.remove("oculto");
     reintentar.hidden = true;
     siguiente.hidden = true;
 
@@ -205,6 +209,7 @@ async function cargarPreguntas() {
 
 
         juego.classList.remove("oculto");
+        iniciarTemporizador(ronda.tiempo);
 
         mostrarPregunta();
 
@@ -237,6 +242,7 @@ function mostrarPregunta() {
     
     imagenRonda.src = ronda.imagen;
     imagenRonda.alt = ronda.nombre;
+    imagenRonda.classList.remove("oculto");
 
     opciones.innerHTML = "";
 
@@ -259,11 +265,6 @@ function mostrarPregunta() {
 
         opciones.append(boton);
     });
-
-
-    // Cada ronda tiene su propio tiempo.
-
-    iniciarTemporizador(ronda.tiempo);
 }
 
 
@@ -273,7 +274,6 @@ function mostrarPregunta() {
 
 function responder(eleccion) {
 
-    detenerTemporizador();
 
     const actual = preguntas[indice];
 
@@ -301,15 +301,15 @@ function responder(eleccion) {
 
     siguiente.textContent =
         indice === preguntas.length - 1
-            ? "Siguiente ronda"
-            : "Siguiente pregunta";
+            ? "Siguiente ronda"           
+            : "Siguiente pregunta";    
 
 
     // Si estamos en la última pregunta
     // de la última ronda, se muestra el resultado.
 
     if (
-        indice === preguntas.length - 1 &&
+        indice === preguntas.length - 1 &&  
         rondaActual === rondas.length - 1
     ) {
 
@@ -366,6 +366,9 @@ async function avanzar() {
     detenerTemporizador();
 
     juego.classList.add("oculto");
+
+    imagenRonda.classList.add("oculto");
+    estado.classList.add("oculto");
 
     puntaje.textContent =
         `Respuestas correctas: ${correctas} de 18`;
@@ -431,39 +434,28 @@ function detenerTemporizador() {
 
 function tiempoAgotado() {
 
-    const actual = preguntas[indice];
+   resultado.textContent = "Se terminó el tiempo de la ronda.";
 
-    const botones =
-        document.querySelectorAll("#opciones button");
+    siguiente.hidden = true;
 
+    rondaActual += 1;
 
-    botones.forEach((boton) => {
+    if (rondaActual < rondas.length) {
 
-        boton.disabled = true;
+        cargarPreguntas();
 
-    });
+    } else {
 
+        juego.classList.add("oculto");
 
-    resultado.textContent =
-        `Se terminó el tiempo. La respuesta era: ${actual.correcta}`;
+        imagenRonda.classList.add("oculto");
+        estado.classList.add("oculto");
 
+        puntaje.textContent =
+            `Respuestas correctas: ${correctas} de 18`;
 
-    siguiente.textContent =
-        indice === preguntas.length - 1
-            ? "Siguiente ronda"
-            : "Siguiente pregunta";
-
-
-    if (
-        indice === preguntas.length - 1 &&
-        rondaActual === rondas.length - 1
-    ) {
-
-        siguiente.textContent = "Ver resultado";
+        final.classList.remove("oculto");
     }
-
-
-    siguiente.hidden = false;
 }
 
 
@@ -486,7 +478,7 @@ reiniciar.addEventListener("click", () => {
     rondas.forEach((ronda) => {
         ronda.preguntas = [];
     });
-    
+
     final.classList.add("oculto");
 
     cargarPreguntas();
@@ -519,6 +511,8 @@ reintentar.addEventListener("click", () => {
 
 siguiente.addEventListener("click", avanzar);
 
-
-cargarPreguntas();
+empezar.addEventListener("click", () => {
+    empezar.classList.add("oculto");
+    cargarPreguntas();
+});
 
