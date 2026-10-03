@@ -86,11 +86,10 @@ button{
     border-radius: 8px;
     cursor:pointer;
 }
-#cartas{
-    width:180px;
-    height: 180px;
+#imagenCarta{
+    width:200px;
+    height: 280px;
     object-fit: contain;
-    margin: 10px;
 }
 #carta-actual{
     margin: 20px auto;

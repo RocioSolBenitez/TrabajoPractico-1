@@ -5,7 +5,8 @@ document.getElementById("ronda");
 let puntaje =
 document.getElementById("puntaje");
 let reiniciar =
-document.getElementByID("reiniciar");
+document.getElementById("reiniciar");
+let imagenCarta = document.getElementById("imagenCarta");
 
 
 let mayor =
@@ -18,21 +19,22 @@ let cartasDisponibles = [1,2,3,4,5,6,7,8,9,10];
 let posicion = 0;
 
 let cartaActual = 
-cartasDisponible [posicion];
+cartasDisponibles [posicion];
 let cartaSiguiente = 
 cartasDisponibles [posicion + 1];
 
-let rondsActual = 0;
+let rondaActual = 0;
 let puntos = 0;
 
 function actualizarPantalla() {
     ronda.textContent = rondaActual;
     puntaje.textContent = puntos;
     cartas.textContent = cartaActual;
+    imagenCarta.src = "img/cartas/carta" + cartaActual + ".png";
 }
 
-meyor.ddEventListener("click",function(){
-    if (carta > cartaActual){
+mayor.addEventListener("click",function(){
+    if (cartaSiguiente > cartaActual){
         puntos++;
     }
     posicion++;
@@ -49,7 +51,7 @@ menor.addEventListener("click",function(){
     if (cartaSiguiente < cartaActual){
         puntos++;
     }
-    cartasActul =
+    cartaActual =
     cartasDisponibles[posicion];
     cartaSiguiente;
     cartasDisponibles[posicion + 1];
