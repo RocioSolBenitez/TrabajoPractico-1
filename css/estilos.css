@@ -86,11 +86,12 @@ button{
     border-radius: 8px;
     cursor:pointer;
 }
-#cartas{
-    width:180px;
-    height: 180px;
-    object-fit: contain;
-    margin: 10px;
+#imagenCarta{
+    width:200px;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 #carta-actual{
     margin: 20px auto;
@@ -130,7 +131,7 @@ footer{
 }
 
 #tiempo {
-    color: red;
+    color: lightyellow;
 }
 
 #dados {
@@ -156,8 +157,12 @@ button:disabled {
 }
 
 #mensaje {
-    font-size: 18px;
-    min-height: 25px;
+    font-size: 40px;
+    min-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+
 }
 
 .posiciones {
@@ -188,21 +193,35 @@ button:disabled {
     font-weight: bold;
 }
 
-.casillero {
+.fichas {
+    margin-top: 8px;
+    min-height: 25px;
+}
+
+.ficha1 {
     display: inline-block;
-    width: 55px;
-    height: 55px;
-    border: 2px solid #222222;
-    margin: 3px;
-    vertical-align: top;
-    padding: 5px;
-    background-color: #eeeeee;
+    width: 20px;
+    height: 20px;
+    background-color: #00d845ec;
+    border-radius: 50%;
+    margin: 2px;
+    border: 1.5px solid #222222;
+}
+
+.ficha2 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ff7300;
+    border-radius: 50%;
+    margin: 2px;
+    border: 1.5px solid #222222;
 }
 
 .juego-contenedor {
     display: flex;
     gap: 2rem;
-    align-items: stretch;
+    align-items: flex-start;
 }
 
 .juego {
@@ -218,20 +237,22 @@ button:disabled {
     text-align: center;
 }
 
-.abajo {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
-}
-
 .posiciones {
-    width: 50%;
+    margin-top: 2rem;
     text-align: center;
 }
 
-.reinicio {
-    width: 50%;
-    text-align: center;
+
+.casillero {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #310e5a;
+    margin: 3px;
+    vertical-align: top;
+    padding: 5px;
+    background-color: #eeeeee;
+    color:#222222
 }
 
 

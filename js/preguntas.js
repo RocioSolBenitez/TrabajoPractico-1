@@ -242,7 +242,7 @@ function mostrarPregunta() {
     
     imagenRonda.src = ronda.imagen;
     imagenRonda.alt = ronda.nombre;
-    imagenRonda.classList.remove("oculto");
+    imagenRonda.classList.remove("oculto"); 
 
     opciones.innerHTML = "";
 
