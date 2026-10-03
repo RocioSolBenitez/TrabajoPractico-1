@@ -30,26 +30,25 @@
                     <h2>¿Cómo se juega?</h2>
 
                     <p>
-                        -Dos jugadores compiten para llegar al casillero 30. En cada turno
+                        Dos jugadores compiten para llegar al casillero 30. En cada turno
                         se tiran dos dados y se suman sus resultados.
                     </p>
 
                     <p>
-                        -Si en la suma de los dos dados da 7, el jugador pierde el turno,
+                        -Si los dos dados muestran el mismo número, el jugador pierde el turno,
                         no avanza y sigue el otro jugador.
                     </p>
 
                     <p>
-                        -Si la suma supera la cantidad de casilleros que faltan,
-                        el jugador tampoco avanza.
-                    </p>
-
-                    <p>
-                        -El primero en llegar al casillero 30 gana!.
+                        -Si en la suma se pasa del casillero 30, el jugador vuelve para atrás.
                     </p>
 
                     <p>
                         -Cada jugador tiene 15 segundos para realizar su turno.
+                    </p>
+
+                    <p>
+                        ¡El primero en llegar al casillero 30 gana!
                     </p>
             </section>
 
@@ -70,7 +69,9 @@
                     
                     <p id="resultado">Presione el botón para comenzar</p>
 
-                    <p id="mensaje"></p>     
+                    <p id="mensaje"></p> 
+                    
+                    <button type="button" id="nuevaPartida">Nueva partida</button>
             </section>
 
             <div class="derecha">
@@ -79,19 +80,12 @@
                 <div id="tablero"></div>
             </section>
 
-            <div class="abajo">
             <section class="posiciones">
                 <h2>Posiciones</h2>
 
-                <p>Jugador 1: <span id="posicion1">0</span></p>
-                <p>Jugador 2: <span id="posicion2">0</span></p>
+                <p>Jugador 1 (Verde): <span id="posicion1">0</span></p>
+                <p>Jugador 2 (Naranja): <span id="posicion2">0</span></p>
             </section>
-
-            <section class="reinicio">
-                <button type="button" id="nuevaPartida">Nueva partida</button>
-            </section>
-
-            </div>
 
         </div>
 
