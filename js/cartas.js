@@ -86,6 +86,7 @@ function avanzarRonda(){
         registros.push(puntos);
 
         localStorage.setItem("cartas", JSON.stringify(registros));
+        final.classList.remove("oculto");
 
         return;
     }
