@@ -68,6 +68,18 @@ function avanzarRonda(){
         mayor.disabled = true;
         menor.disabled = true;
 
+        //GUARDAR RESULTADOS
+    let registros = localStorage.getItem("cartas");
+        if (registros == null) {
+        registros = [];
+        } else {
+        registros = JSON.parse(registros);
+        }
+
+        registros.push(puntos);
+
+        localStorage.setItem("cartas", JSON.stringify(registros));
+
         return;
     }
     cartaActual = cartaSiguiente;

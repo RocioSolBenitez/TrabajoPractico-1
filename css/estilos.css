@@ -268,3 +268,28 @@ button:disabled {
     display: none;
 }
 
+/* PUNTAJES */
+
+.puntajes {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.puntaje-juego {
+    width: 33.33%;
+    padding: 1rem;
+    border: 0.125rem solid rgb(250, 233, 253);
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: #310e5a;
+}
+
+.puntaje-juego h2 {
+    margin-top: 0;
+}
+
+.borrar-puntajes {
+    text-align: center;
+    margin-top: 2rem;
+}

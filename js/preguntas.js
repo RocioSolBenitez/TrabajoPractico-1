@@ -373,6 +373,19 @@ async function avanzar() {
     puntaje.textContent =
         `Respuestas correctas: ${correctas} de 18`;
 
+        //GUARDA LOS RESULTADOS
+        let registros = localStorage.getItem("preguntas");
+
+        if (registros == null) {
+        registros = [];
+        } else {
+        registros = JSON.parse(registros);
+}
+
+    registros.push(correctas);
+
+    localStorage.setItem("preguntas", JSON.stringify(registros));
+
     final.classList.remove("oculto");
 }
 
@@ -453,6 +466,19 @@ function tiempoAgotado() {
 
         puntaje.textContent =
             `Respuestas correctas: ${correctas} de 18`;
+
+            //GUARDA OTROS RESULTADOS
+            let registros = localStorage.getItem("preguntas");
+
+            if (registros == null) {
+            registros = [];
+            } else {
+            registros = JSON.parse(registros);
+}
+
+        registros.push(correctas);
+
+        localStorage.setItem("preguntas", JSON.stringify(registros));
 
         final.classList.remove("oculto");
     }
