@@ -20,16 +20,16 @@ main{
 /* contenedor principal */
 .contenedor{
     width: 80%;
-    max-width: 1200px;
+    max-width: 75rem;
     margin: auto;
     padding: 2rem;
     background-color: #6d10d88c;
-    border: 3px solid #2b055c;
-    border-radius: 18px;
+    border: 0.2rem solid #2b055c;
+    border-radius: 1.1rem;
     padding: 2rem;
     width: 80%;
     margin: 0.5rem auto;
-    box-shadow: 8px 8px 0px #01e7c1ec;
+    box-shadow: 0.5rem 0.5rem 0px #01e7c1ec;
 
 }
 /* encabezado */
@@ -40,7 +40,7 @@ main{
     padding: 2rem;
     background: linear-gradient(90deg, #ab19ff, #2ee6af);
     color: white;
-    border-radius: 18px;
+    border-radius: 1.13rem;
 }
 
 .menu a{
@@ -81,25 +81,25 @@ button{
     background-color: #310e5a;
     color:white;
     border: none;
-    padding: 12px 25px;
-    margin: 5px;
-    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    margin: 0.3rem;
+    border-radius: 0.5rem;
     cursor:pointer;
 }
 #imagenCarta{
-    width:200px;
-    height: 280px;
+    width:12.5rem;
+    height: 17.5rem;
     object-fit: cover;
     display: block;
     margin: 0 auto;
 }
 #carta-actual{
-    margin: 20px auto;
-    padding: 20px;
+    margin: 1.25rem auto;
+    padding: 1.25rem;
 }
 #mensaje{
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 1.12rem;
+    margin-top: 1.25rem;
 }
 #ronda,#puntaje{
     font-weight: bold;
@@ -108,8 +108,8 @@ button:hover{
     background-color: #8a2be2;
 }    
 h1,h2{
-    font-size: 40px;
-    margin-bottom:20px;
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
 }
 footer{
     margin-top: none;
@@ -126,7 +126,7 @@ footer{
 }
 
 .temporizador {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
@@ -135,7 +135,7 @@ footer{
 }
 
 #dados {
-    margin: 25px 0;
+    margin: 1.5rem 0;
 }
 
 #dados img {
@@ -152,17 +152,16 @@ button:disabled {
 
 #resultado {
     margin-top: 1rem;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
 #mensaje {
-    font-size: 40px;
-    min-height: 50px;
+    font-size: 1.5rem;
+    min-height: 3.1rem;
     font-weight: bold;
     text-align: center;
-    margin: 20px 0;
-
+    margin: 1.25rem 0;
 }
 
 .posiciones {
@@ -171,8 +170,8 @@ button:disabled {
 
 .posiciones p {
     display: inline-block;
-    margin: 10px 30px;
-    font-size: 18px;
+    margin: 0.6rem 1.8rem;
+    font-size: 1.1rem;
 }
 
 #posicion1 {
@@ -185,7 +184,7 @@ button:disabled {
 
 #tablero {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 .numero {
@@ -194,28 +193,28 @@ button:disabled {
 }
 
 .fichas {
-    margin-top: 8px;
-    min-height: 25px;
+    margin-top: 0.5rem;
+    min-height: 1.5rem;
 }
 
 .ficha1 {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
     background-color: #00d845ec;
     border-radius: 50%;
-    margin: 2px;
-    border: 1.5px solid #222222;
+    margin: 0.2rem;
+    border: 0.1rem solid #222222;
 }
 
 .ficha2 {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
     background-color: #ff7300;
     border-radius: 50%;
-    margin: 2px;
-    border: 1.5px solid #222222;
+    margin: 0.2rem;
+    border: 0.1rem solid #222222;
 }
 
 .juego-contenedor {
@@ -245,12 +244,12 @@ button:disabled {
 
 .casillero {
     display: inline-block;
-    width: 55px;
-    height: 55px;
-    border: 2px solid #310e5a;
-    margin: 3px;
+    width: 3.4rem;
+    height: 3.4rem;
+    border: 0.2rem solid #310e5a;
+    margin: 0.2rem;
     vertical-align: top;
-    padding: 5px;
+    padding: 0.3rem;
     background-color: #eeeeee;
     color:#222222
 }
@@ -258,10 +257,10 @@ button:disabled {
 
 /* juego PREGUNTAS */
 #imagenRonda {
-    width: 425px;
-    height: 325px;
+    width: 26.5rem;
+    height: 20.3rem;
     object-fit: cover;
-    margin: 15px auto;
+    margin: 0.9rem auto;
 }
 
 .oculto {
