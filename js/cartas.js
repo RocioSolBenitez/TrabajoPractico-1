@@ -15,6 +15,8 @@ let puntaje =
 document.getElementById("puntaje");
 let reiniciar =
 document.getElementById("reiniciar");
+let final = 
+document.getElementById("final");
 let imagenCarta = document.getElementById("imagenCarta");
 
 
@@ -37,6 +39,7 @@ let puntos = 0;
 
 //carta aleatoria 
 function iniciarTimer() {
+    clearInterval(intervaloTimer);
     tiempo = 10;
     timer.textContent = "tiempo" + tiempo;
 
@@ -63,6 +66,10 @@ function avanzarRonda(){
     if (rondaActual >= 10){
         juegoTerminado = true;
         clearInterval(intervaloTimer);
+
+        tiempo = 0;
+        timer.textContent =
+        "tiempo: 0"
 
         mensaje.textContent = "¡Terminaste las 10 rondas!";
         mayor.disabled = true;
@@ -128,6 +135,15 @@ menor.addEventListener("click",function(){
 
 });
 reiniciar.addEventListener("click",function(){
+    final.classList.add("oculto");
+
+    clearInterval(intervaloTimer);
+    tiempo = 10;
+    timer.textContent =
+    "tiempo" + tiempo;
+
+
+
     posicion = 0;
     cartaActual =
     cartasDisponibles[posicion]; 
@@ -151,6 +167,7 @@ reiniciar.addEventListener("click",function(){
     puntaje.textContent = puntos;
 
     actualizarPantalla();
+    iniciarTimer();
     mostrarDorso();
 
 });
