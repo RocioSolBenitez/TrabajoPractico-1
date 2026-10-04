@@ -1,6 +1,8 @@
 # TrabajoPractico-1 - Informática General 2026
 Cátedra: Valeria Drelichman, Pedro Paleo, Leonardo Nadel, Norma Morales
+
 Integrantes: Rocio Benitez; Gimena Kiara Veron; Desireé Figueroa Quevedo
+
 Artes Multimediales - Universidad Nacional de las Artes
 
 El siguiente trabajo consta de 6 páginas: una página principal con información general sobre el sitio, una página para cada uno de los tres juegos, una de puntajes con records de cada uno, y, la ultima página, con información sobre las integrantes y el desarrollo del proyecto.
