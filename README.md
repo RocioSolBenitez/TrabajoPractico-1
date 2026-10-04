@@ -1,1 +1,13 @@
-# TrabajoPractico-1
+# TrabajoPractico-1 - Informática General 2026
+Cátedra: Valeria Drelichman, Pedro Paleo, Leonardo Nadel, Norma Morales
+Integrantes: Rocio Benitez; Gimena Kiara Veron; Desireé Figueroa Quevedo
+
+El siguiente trabajo consta de 6 páginas: una página principal con información general sobre el sitio, una página para cada uno de los tres juegos, una de puntajes con records de cada uno, y, la ultima página, con información sobre las integrantes y el desarrollo del proyecto.
+
+
+Documentación de la API utilizada - 
+Durante el proceso de desarrollo del trabajo surgieron dos ideas de temáticas para la API. En un primer momento, quisimos utilizar una API de cine y, luego, una de países/cultura general. Sin embargo, finalmente optamos por una API de trivia, por ser más dinámica, ya que nos permitía incluir distintas categorías (cine, música y geografía) y diferentes niveles de dificultad en tres rondas.
+En el desarrollo de la prueba con una API de cine, tuvimos la intención de traducirla. Probamos distintas alternativas para hacerlo, como el uso de otra API de traducción llamada MyMemory, la cual descartamos porque, además de traducir mal, tardaba mucho en cargar y se repetía el error HTTP 429, que significaba que alguna de las APIs estaba recibiendo demasiadas solicitudes en poco tiempo. También, la IA (ChatGPT) nos recomendó utilizar la API de MyMemory con un email de contacto, para identificar o contactar al usuario, ya que es la opción recomendada para herramientas con mayor volumen de uso. Aunque esa alternativa aumentaba bastante el límite diario, no garantizaba nunca dejar de recibir el error de traducción HTTP 429.
+Se descartaron todas esas ideas y comenzamos con otra API. 
+Como no encontrábamos APIs en español que cumplieran con los requisitos pedidos (diseñada para usarse desde el navegador, sin clave, sin límite de solicitudes), desistimos de la idea de traducir.
+Finalmente, usamos la API Open Trivia DB (https://opentdb.com/api_config.php), una API pública y gratuita de preguntas. El juego está dividido en tres rondas: Música, Cine y Geografía. Cada ronda consulta la API con una categoría y dificultad diferente: Música utiliza la categoría 12 y dificultad fácil; Cine, la categoría 11 y dificultad media; y Geografía, la categoría 22 y dificultad difícil. De cada categoría obtenemos seis preguntas, por lo que en total tenemos 18. Las preguntas tienen una respuesta correcta y tres incorrectas, que mezclamos para crear las opciones. Además, cada ronda tiene un temporizador diferente: 30 segundos para Música, 25 para Cine y 20 para Geografía. Cuando termina una ronda se consulta nuevamente la API para obtener las preguntas de la siguiente, hasta completar las tres rondas. En esta parte del código hicimos uso de IA para configurar las rondas y para gestionar la espera entre solicitudes a la API.
