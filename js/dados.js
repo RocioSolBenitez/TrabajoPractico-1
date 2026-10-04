@@ -224,6 +224,7 @@ function ganar() {
     resultado.innerText = "Cantidad de turnos: " + cantidadTurnos;
 
     botonTirar.disabled = true;
+    botonNuevaPartida.disabled = false;
 
     guardarResultado();
 }
@@ -253,6 +254,7 @@ function guardarResultado() {
 
 //NUEVA PARTIDA
 function nuevaPartida() {
+    botonNuevaPartida.disabled = true;
 
     clearInterval(timer);
     posicionJugador1 = 0;
@@ -284,3 +286,4 @@ botonNuevaPartida.addEventListener("click", nuevaPartida);
 crearTablero();
 mostrarFichas();
 
+botonNuevaPartida.disabled = true;
